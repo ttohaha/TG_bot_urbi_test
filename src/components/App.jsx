@@ -1,21 +1,12 @@
 import {useEffect} from 'react'
+import Header from './Header/Header';
 //https://tg-bot-urbi-test.vercel.app/
-const tg = window.Telegram.WebApp
 
 function App() {
 
-  useEffect(()=>{
-    tg.ready()
-  },[])
-
-  const CloseTG = ()=>{
-    tg.close()
-  }
-
   return (
     <div className="App">
-        привет как дела
-        <button onClick={CloseTG}>Закрыть</button>
+        <Header/>
     </div>
   );
 }
