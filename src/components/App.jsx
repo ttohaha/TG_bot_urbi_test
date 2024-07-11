@@ -1,7 +1,12 @@
 import {useEffect} from 'react'
 import Header from './Header/Header';
+import Form from './Form/Form';
 //https://tg-bot-urbi-test.vercel.app/
 import { useTelegram } from '../hooks/useTelegram'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+import './App.css'
+import ProductList from './ProductList/ProductList';
 
 const tg = window.Telegram.WebApp
 
@@ -13,10 +18,16 @@ function App() {
   },[])  
 
   return (
-    <div className="App">
-        <Header/>
-        <button onClick={onToggleBotton}>toggle</button>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+          <Header/>
+          <Routes>
+            <Route path='/' element={<ProductList/>}/>
+            <Route path='/form' element={<Form/>}/>
+          </Routes>
+          {/* <button onClick={onToggleBotton}>toggle</button> */}
+      </div>
+    </BrowserRouter>
   );
 }
 
