@@ -11,8 +11,8 @@ function Header() {
       },[])
     
     const CloseTG = ()=>{
-        console.log(tg.initDataUnsafe);
-        // tg.close()
+        alert('hjj;lag')
+        tg.close()
     }
 
 
@@ -20,7 +20,7 @@ function Header() {
     <div className="header">
         <Button onClick={CloseTG}>Закрыть</Button>
         <span className="username">
-            {/* {tg.initDataUnsafe?.user.username} */}
+            {tg.initDataUnsafe?.user.username}
         </span>
     </div>
   )
