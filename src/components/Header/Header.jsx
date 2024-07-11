@@ -12,7 +12,7 @@ function Header() {
     
     const CloseTG = ()=>{
         console.log(tg.initDataUnsafe);
-        tg.close()
+        // tg.close()
     }
 
 
