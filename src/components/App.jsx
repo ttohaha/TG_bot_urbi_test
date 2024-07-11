@@ -1,11 +1,12 @@
 import {useEffect} from 'react'
-// const tg = window.Telegram.WebApp
+//https://tg-bot-urbi-test.vercel.app/
+const tg = window.Telegram.WebApp
 
 function App() {
 
-  // useEffect(()=>{
-  //   tg.ready()
-  // },[])
+  useEffect(()=>{
+    tg.ready()
+  },[])
 
   const CloseTG = ()=>{
     tg.close()
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
         привет как дела
-        {/* <button onClick={CloseTG}>Закрыть</button> */}
+        <button onClick={CloseTG}>Закрыть</button>
     </div>
   );
 }
