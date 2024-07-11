@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 const tg = window.Telegram.WebApp
 
 function App() {
@@ -6,13 +7,13 @@ function App() {
     tg.ready()
   },[])
 
-  cnost CloseTG = ()=>{
+  const CloseTG = ()=>{
     tg.close()
   }
 
   return (
     <div className="App">
-        work
+        привет как дела
         <button onClick={CloseTG}>Закрыть</button>
     </div>
   );
