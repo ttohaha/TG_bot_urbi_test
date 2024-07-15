@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import './Form.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
-function Form() {
+const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
@@ -24,19 +24,19 @@ function Form() {
         }
     }, [onSendData])
 
-    useEffect(()=>{
+    useEffect(() => {
         tg.MainButton.setParams({
-            text:'Отправить данные'
+            text: 'Отправить данные'
         })
-    },[])
+    }, [])
 
-    useEffect(()=>{
-        if(!street || !country){
-            tg.MainButton.hide()
-        }else{
-            tg.MainButton.show()
+    useEffect(() => {
+        if(!street || !country) {
+            tg.MainButton.hide();
+        } else {
+            tg.MainButton.show();
         }
-    },[country,street])
+    }, [country, street])
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
@@ -50,8 +50,8 @@ function Form() {
         setSubject(e.target.value)
     }
 
-  return (
-    <div className={"form"}>
+    return (
+        <div className={"form"}>
             <h3>Введите ваши данные</h3>
             <input
                 className={'input'}
@@ -72,7 +72,7 @@ function Form() {
                 <option value={'legal'}>Юр. лицо</option>
             </select>
         </div>
-  )
-}
+    );
+};
 
-export default Form
+export default Form;
