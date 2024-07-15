@@ -4,6 +4,7 @@ import Productitem from "../Productitem/Productitem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 
+
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
     {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
@@ -72,7 +73,7 @@ const ProductList = () => {
     return (
         <div className={'list'}>
             {products.map(item => (
-                <ProductItem
+                <Productitem
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
