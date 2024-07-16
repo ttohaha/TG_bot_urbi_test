@@ -39,6 +39,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
+        tg.close()
     }, [addedItems])
 
     useEffect(() => {
